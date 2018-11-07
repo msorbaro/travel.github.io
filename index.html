@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="./turn.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+<style type="text/css">
+body{
+	background-image:url(pages/wood.jpeg);
+}
+#magazine{
+	width:1152px;
+	height:752px;
+}
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+}
+
+</style>
+</head>
+<body>
+
+<div id="magazine" style="text-align: center;">
+	<div style="background-image:url(pages/0.jpg);">
+		<h1 style="font-family: 'Pacifico', cursive; margin-left: 12%; margin-right: 12%;text-align: center; margin-top: 40vh; color: rgb(115, 190, 255); background-color: rgba(255, 255, 255, 0.8);"> Morgan's Virtual Scrapbook </h1>
+	</div>
+	<div id="intro" style="background-color:rgb(255, 190, 248);">
+		<h1 style="text-align: center; font-family: 'Pacifico', cursive; margin-top: 20vh; font-size: 5em; color: rgb(255, 255, 255)"> Hello</h1>
+		<p style="text-align: center; font-family: 'Pacifico', cursive; font-size: 2em">Welcome to my virtual scrapbook</p></div>
+	<div id="intro" style="background-color:rgb(255, 190, 248); border-left-style: solid; border-width: 2px;">
+		<h1 style="text-align: center; font-family: 'Pacifico', cursive; margin-top: 10vh; font-size: 5em; color: rgb(255, 255, 255)"> Summary</h1>
+		<p style="text-align: justify; margin: 4%; font-family: 'Pacifico', cursive; font-size: 1.2em"> I wanted to take a Polariod for each place I visited, but after a while I
+		realized that the Polaroids needed a home. Enter the Scrapbook idea. </p>
+		<p style="text-align: justify; margin: 4%; font-family: 'Pacifico', cursive; font-size: 1.2em"> This is all pictures from the scrapbook I have been making
+			throughout the term. Each page has photos, tickets and more to document my journies. The first section is all taken in Budapest from the more notable events.
+			Sadly I have been really bad about taking pictures in Budapest (I'm working on it for this
+			next half) but luckily I have a lot for travel. Each color paper denotes a different trip and hopefully this works as a short
+			summary of what I have been up to- Feel free to reach out to talk about any of it :) </p>
+	</div>
+	<div style="background-image:url(pages/1.jpg);"></div>
+	<div style="background-image:url(pages/2.jpg);"></div>
+	<div style="background-image:url(pages/3.jpg);"></div>
+	<div style="background-image:url(pages/4.jpg);"></div>
+	<div style="background-image:url(pages/5.jpg);"></div>
+	<div style="background-image:url(pages/6.jpg);"></div>
+	<div style="background-image:url(pages/7.jpg);"></div>
+	<div style="background-image:url(pages/8.jpg);"></div>
+	<div style="background-image:url(pages/9.jpg);"></div>
+	<div style="background-image:url(pages/10.jpg);"></div>
+	<div style="background-image:url(pages/11.jpg);"></div>
+	<div style="background-image:url(pages/12.jpg);"></div>
+	<div style="background-image:url(pages/13.jpg);"></div>
+	<div style="background-image:url(pages/14.jpg);"></div>
+	<div style="background-image:url(pages/15.jpg);"></div>
+	<div style="background-image:url(pages/16.jpg);"></div>
+	<div style="background-image:url(pages/17.jpg);"></div>
+	<div style="background-image:url(pages/18.jpg);"></div>
+	<div style="background-image:url(pages/19.jpg);"></div>
+	<div style="background-image:url(pages/20.jpg);"></div>
+	<div style="background-image:url(pages/21.jpg);"></div>
+	<div style="background-image:url(pages/22.jpg);"></div>
+	<div style="background-image:url(pages/23.jpg);"></div>
+	<div style="background-image:url(pages/24.jpg);"></div>
+	<div style="background-image:url(pages/25.jpg);"></div>
+	<div style="background-image:url(pages/26.jpg);"></div>
+	<div style="background-image:url(pages/27.jpg);"></div>
+	<div style="background-image:url(pages/28.jpg);"></div>
+	<div style="background-image:url(pages/29.jpg);"></div>
+
+</div>
+
+
+<script type="text/javascript">
+
+	$(window).ready(function() {
+		$('#magazine').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+
+
+	$(window).bind('keydown', function(e){
+
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');
+
+	});
+
+</script>
+
+</body>
+</html>
